@@ -12,7 +12,7 @@ st.write("プレグスバーの表示")
 latest_iteration = st.empty()
 bar = st.progress(0)
 
-for i in range(1,100):
+for i in range(1,10):
     latest_iteration.text(f'Iteration{i+1}')
     bar.progress(i+1)
     time.sleep(0.1)
@@ -25,9 +25,8 @@ left_column, right_column = st.columns(2)
 button = left_column.button('右カラムに文字を表示')
 
 if button:
-    right_column.write('ここは右カラムです')
+    right_column.write('いかいかまいか')
 
-expandar = st.expander('問い合わせ1')
-expandar.write('問い合わせ1の回答')
-expandar = st.expander('問い合わせ2')
-expandar.text_input('問い合わせ2の回答')
+if st.checkbox('Show Image'):
+    img = Im.open('C:\python\VScode\Testimage.jpg')
+    st.image(img, caption='よいよい', use_column_width=True)
